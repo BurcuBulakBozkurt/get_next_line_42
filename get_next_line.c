@@ -21,7 +21,8 @@ char	*ft_get_text(int fd, char *buftxt)
 	if (!temp)
 		return (0);
 	read_bytes = 1;
-	while (!ft_strchr(buftxt, '\n') && read_bytes != 0)
+	while (!ft_strchr(buftxt, '\n') && read_bytes != 0) //It reads the contents of the file no matter how many buffer_size is, that was the important question in the project. 
+		//The difference is; how many times it loops. If buffer_size is large enough, it can read it at once, if not, it loops several times.
 	{
 		read_bytes = read(fd, temp, BUFFER_SIZE);
 		if (read_bytes == -1)
@@ -39,7 +40,9 @@ char	*ft_get_text(int fd, char *buftxt)
 
 char	*get_next_line(int fd)
 {
-	static char	*buftxt;
+	static char	*buftxt; 
+	//If it was just char*, it would be reset after exiting the function, since it is static, it keeps the result in memory. 
+	//We want to keep the result after the end of the line (/n) in memory because we want to print it in the future, so we write use static char*.
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
