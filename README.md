@@ -17,4 +17,4 @@ except if the end of file was reached and does not end with a \n character.
 get_next_line() function.
 * Add all the helper functions you need in the get_next_line_utils.c file.
 
-- For detailed information, please check [the subject of this project](https://github.com/BurcuBulakBozkurt/ft_printf_42/blob/main/Prinft_subject.pdf).
+- For detailed information, please check [the subject of this project](https://github.com/BurcuBulakBozkurt/get_next_line_42/blob/main/get_next_line_subject.pdf).
